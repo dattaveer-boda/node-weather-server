@@ -15,7 +15,7 @@ weatherForm.addEventListener("submit", (e) => {
   const errorPtag = document.querySelector("#error");
   const resultPtag = document.querySelector("#output");
   resultPtag.textContent = "it's loading...";
-  fetch(`http://localhost:3839/weather?address=${value}`)
+  fetch(`/weather?address=${value}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.error) {

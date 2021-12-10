@@ -7,6 +7,7 @@ const geoService = require("./utils/GeoService");
 const getWeatherData = require("./utils/WeatherService");
 
 const app = express();
+const PORT = process.env.PORT || 3839;
 
 const publicDirPath = path.join(__dirname, "../public");
 app.use(express.static(publicDirPath));
@@ -83,6 +84,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3839, () => {
+app.listen(PORT, () => {
   console.log("Server listening at 3839");
 });
