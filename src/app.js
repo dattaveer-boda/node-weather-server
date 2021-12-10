@@ -24,6 +24,13 @@ app.set("views", viewsPath);
 const partialsPath = path.join(__dirname, "../templates/partials");
 hbs.registerPartials(partialsPath);
 
+app.get("", (req, res) => {
+  res.render("index", {
+    title: "Weather App",
+    name: "Dattaveer Boda",
+  });
+});
+
 app.get("/", (req, res) => {
   res.render("index", {
     title: "Weather App",
