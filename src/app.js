@@ -66,7 +66,7 @@ app.get("/weather", (req, res) => {
           res.send({ error });
         } else {
           res.send({
-            address: req.query.address,
+            address: geoData.location, // req.query.address,
             description: weatherData.weather_descriptions.join(","),
             temperature: weatherData.temperature,
             feelslike: weatherData.feelslike,
